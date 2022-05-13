@@ -3,7 +3,6 @@ body {
 }
 
 .body-outer {
-    height: 1000px;
     background: #d1c2b6;
     padding: 70px;
     display: inline-block;
@@ -50,4 +49,23 @@ body {
 .article-header {
     font-size: 25px;
     font-weight: bold;
+}
+
+.article-text {
+
+}
+
+img.right {
+    float: right;
+    margin-left: 10px;
+}
+
+img.left {
+    float: left;
+    margin-right: 10px;
+}
+
+.article-img {
+    height: auto;
+    width: 310px;
 }
