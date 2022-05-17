@@ -2,6 +2,11 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .body-outer {
     background: #d1c2b6;
     width: 100%;
