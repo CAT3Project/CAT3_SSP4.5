@@ -5,15 +5,21 @@ body {
 .article-title {
     font-size: 55px;
     font-weight: 200;
-    margin-top: 50px;
+    margin-top: 35px;
+    margin-right: 25%;
+    margin-left: 25%;
+    text-align: left;
 }
 
 .article-author {
-
+    text-align: left;
+    margin-right: 25%;
+    margin-left: 25%;
+    margin-top: 10px;
 }
 
 .article-text {
-    margin: 5% 15%;
-    font-size: 18px;
+    margin: 5% 25%;
+    font-size: 20px;
     text-align: left;
 }

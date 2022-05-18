@@ -46,9 +46,11 @@ a {
     border-left: 0;
     border-top: 0;
     text-align: justify;
+    overflow: auto;
 }
 
 .article-left {
+    text-align: left;
 }
 
 .article-right {
@@ -74,7 +76,7 @@ a {
 }
 
 .article-text {
-
+    margin-top: 15px;
 }
 
 img.right {
