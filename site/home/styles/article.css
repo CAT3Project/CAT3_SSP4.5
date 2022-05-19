@@ -7,10 +7,25 @@ img {
     margin-top: 20px;
 }
 
+.home-button-div {
+    margin-left: 25%;
+    margin-top: 20px;
+    text-align: left;
+    color: #d1c2b6;
+}
+
+.home-button {
+    border-radius: 5px;
+    background-color: floralwhite;
+    border: #4f4f4f 1px solid;
+    cursor: pointer;
+    font-size: 14px;
+}
+
 .article-title {
     font-size: 45px;
     font-weight: 200;
-    margin-top: 35px;
+    margin-top: 20px;
     margin-right: 25%;
     margin-left: 25%;
     text-align: left;
