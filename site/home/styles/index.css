@@ -126,6 +126,7 @@ a {
 .article-header {
     font-size: 25px;
     font-weight: bold;
+    text-align: left;
 }
 
 .article-text {
