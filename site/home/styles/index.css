@@ -1,4 +1,4 @@
-header {
+.menu {
     background-color: #b9a798;
     position: fixed;
     left: 0;
@@ -10,12 +10,17 @@ header {
 
 }
 
-header * {
-    display: inline;
+.title {
+    font-size: 35px;
+    padding: 5% 5%;
 }
 
+/* .menu * {
+    display: inline;
+} */
+
 .nav-bar {
-    padding: 100px 100px;
+    padding: 0 5%;
     display: flex;
     gap: 2em;
     font-size: 20px;
@@ -29,23 +34,18 @@ header * {
     top: 35px;
 }
 
-.dropdown li+li {
-    margin-top: 10px;
-}
-
-.dropdown li {
+.dropdown a {
     padding: 0.5em 1em;
-    width: 8em;
-    text-align: center;
+    width: 6em;
 }
 
 .articles:hover .dropdown {
     display: block;
 }
 
-.articles li:hover {
-    display: inline-block;
-    background-color: #4c9e9e;
+.articles a:hover {
+    display: block;
+    background-color: #a2856d;
     transition: 0.3s ease;
 }
 
