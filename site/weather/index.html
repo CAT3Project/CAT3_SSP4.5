@@ -1,10 +1,56 @@
 <!DOCTYPE html>
+
+
 <head>
     <link rel="stylesheet" href="../styles/article.css">
+    <style>
+        .weather-body {
+            position: absolute;
+            top: 20px;
+            left: 85%;
+            right: 20px;
+            /* for now */
+        }
+
+        .temperature {
+            position: absolute;
+            top: 10%;
+            left: 94%;
+            right: 20px;
+            z-index: 1;
+            font-size: 150%;
+            /* for now */
+        }
+
+        .date {
+            position: absolute;
+            top: 40px;
+            left: 86%;
+            right: 20px;
+            z-index: 1;
+            font-size: 100%;
+            /* for now */
+        }
+    </style>
 </head>
+
 <body>
     <form action="https://cat3project.github.io/CAT3_SSP4.5/site/home/index.html" class="home-button-div">
-        <input type="submit" value="Home" class="home-button"/>
+        <input type="submit" value="Home" class="home-button" />
     </form>
+
+    <div class="weather-body">
+        <img src="sources/araquanid.gif" alt="clouds" style="width:200px;height: 200px;border-radius: 20%;">
+    </div>
+
+    <div class="text-info">
+        <div class="temperature">
+            23ºC
+        </div>
+        <div class="date">
+            May 15th, 2052 Sunday
+        </div>
+    </div>
 </body>
+
 </html>
