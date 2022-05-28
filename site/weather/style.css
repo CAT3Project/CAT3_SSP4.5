@@ -1,0 +1,137 @@
+body,
+html {
+    height: 100%;
+    margin: 0;
+}
+
+.background-image {
+    background-image: url('sources/main/bgi_snowyMount.png');
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    color: white;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 30px;
+}
+
+.top-panel {
+    position: relative;
+    top: 3%;
+}
+
+.topleft {
+    position: absolute;
+    left: 2%;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+}
+
+.topRight {
+    position: absolute;
+    width: 5%;
+    right: 7%;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+}
+
+.weather-icon {
+    position: absolute;
+    width: 5%;
+    right: 2%;
+}
+
+.bottom-panel {
+    position: absolute;
+    top: 70%;
+    height: 30%;
+    width: 100%;
+    /* text-align: center; */
+    background-color: rgb(57, 59, 65);
+    opacity: 0.9;
+    /* border-top:  #686565 1px solid; */
+}
+
+.bottom-left {
+    position: absolute;
+    width: 25%;
+    height: 100%;
+    padding: 25px 20px;
+    border-top: #fed58a 4px solid;
+}
+
+/* .bottom-temperature{
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    left: 20%;
+    border-top:  #d3b143 4px solid;
+    border-right:  #686565 1px solid;
+} */
+.city1 {
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    left: 25%;
+    border-top: #fdc98b 4px solid;
+    border-left: #686565 1px solid;
+    border-right: #686565 1px solid;
+    text-align: center;
+}
+
+.city2 {
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    left: 40%;
+    border-top: #fcb868 4px solid;
+    border-right: #686565 1px solid;
+}
+
+.city3 {
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    left: 55%;
+    border-top: #fca845 4px solid;
+    border-right: #686565 1px solid;
+}
+
+.city4 {
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    left: 70%;
+    border-top: #fb9721 4px solid;
+    border-right: #686565 1px solid;
+}
+
+.city5 {
+    position: absolute;
+    width: 15%;
+    height: 100%;
+    left: 85%;
+    border-top: #f68703 4px solid;
+    border-right: #686565 1px solid;
+}
+
+.icon{
+    position: absolute;
+    width: 70%;
+    height: 60%;
+    left: 15%;
+    right: 15%;
+    top: 30%;
+}
+
+.city-title{
+    position: absolute;
+    height: 10%;
+    top: 10%;
+    font-size: 70%;
+    width: 100%;
+    text-align: center;
+    /* width: 70%;
+    right: 15%; */
+    /* border-right: #686565 1px solid; */
+}
