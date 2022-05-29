@@ -157,3 +157,13 @@ img.left {
     height: auto;
     width: 330px;
 }
+
+.ad-container {
+    text-align: center;
+}
+
+.ad-image{
+    padding: 20px;
+    height: auto;
+    width: 80%
+}
