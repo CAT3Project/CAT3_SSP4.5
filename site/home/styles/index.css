@@ -1,3 +1,7 @@
+body {
+    font-family: -apple-system,BlinkMacSystemFont;
+}
+
 .menu {
     background-color: #b9a798;
     position: fixed;
