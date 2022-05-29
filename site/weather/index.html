@@ -10,12 +10,11 @@
     <div class="background-image">
         <div class="top-panel">
             <div class="topleft">
-                Geisel Times
+                <a href="../home/index.html">Geisel Times</a>
             </div>
             <div class="topRight">
                 Weather<br>
                 Report
-                <!-- <h1>Weather Report</h1> -->
             </div>
             <div class="weather-icon">
                 <img class="icon" src="sources/main/weather_icon.png" style="height: 50px;" />
@@ -27,21 +26,16 @@
                 <div id="date"></div>
                 <div id="time"></div>
                 <script>
-                    // Function to format 1 in 01
+                    
                     const zeroFill = n => {
                         return ('0' + n).slice(-2);
                     }
 
-                    // Creates interval
                     const interval = setInterval(() => {
-                        // Get current time
                         const now = new Date();
-
-                        // Format date as in mm/dd/aaaa hh:ii:ss
                         const date = zeroFill((now.getMonth() + 1)) + '/' + zeroFill(now.getUTCDate()) + '/' + now.getFullYear();
                         const time = zeroFill(now.getHours()) + ':' + zeroFill(now.getMinutes()) + ':' + zeroFill(now.getSeconds());
 
-                        // Display the date and time on the screen using div#date-time
                         document.getElementById('date').innerHTML = date;
                         document.getElementById('time').innerHTML = time;
                     }, 1000);
@@ -52,31 +46,31 @@
             </div>
             <div class="city1">
                 <div class="city-title">
-                    La Jolla, US
+                    <a href="report/lajolla-weather.html">La Jolla, US</a>
                 </div>
                 <img class="icon" src="sources/main/icon_lj.png" />
             </div>
             <div class="city2">
                 <div class="city-title">
-                    Beijing, China
+                    <a href="report/beijing-weather.html">Beijing, China</a>
                 </div>
                 <img class="icon" src="sources/main/icon_china.png" />
             </div>
             <div class="city3">
                 <div class="city-title">
-                    Cairo, Egypt
+                    <a href="report/cairo-weather.html">Cairo, Egypt</a>
                 </div>
                 <img class="icon" src="sources/main/icon_egypt.png">
             </div>
             <div class="city4">
                 <div class="city-title">
-                    Moscow, Russia
+                    <a href="report/moscow-weather.html">Moscow, Russia</a>
                 </div>
                 <img class="icon" src="sources/main/icon_moscow.png" />
             </div>
             <div class="city5">
                 <div class="city-title">
-                    Paris, France
+                    <a href="report/paris-weather.html">Paris, France</a>
                 </div>
                 <img class="icon" src="sources/main/icon_paris.png" />
 

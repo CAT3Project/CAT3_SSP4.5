@@ -23,7 +23,7 @@ html {
 .topleft {
     position: absolute;
     left: 2%;
-    font-family: "Times New Roman", Times, serif;
+    font-family: -apple-system,BlinkMacSystemFont;
     font-size: 20px;
 }
 
@@ -31,7 +31,7 @@ html {
     position: absolute;
     width: 5%;
     right: 7%;
-    font-family: "Times New Roman", Times, serif;
+    font-family: -apple-system,BlinkMacSystemFont;
     font-size: 20px;
 }
 
@@ -57,17 +57,10 @@ html {
     width: 25%;
     height: 100%;
     padding: 25px 20px;
+    font-family: -apple-system,BlinkMacSystemFont;
     border-top: #fed58a 4px solid;
 }
 
-/* .bottom-temperature{
-    position: absolute;
-    width: 20%;
-    height: 100%;
-    left: 20%;
-    border-top:  #d3b143 4px solid;
-    border-right:  #686565 1px solid;
-} */
 .city1 {
     position: absolute;
     width: 15%;
@@ -130,8 +123,11 @@ html {
     top: 10%;
     font-size: 70%;
     width: 100%;
+    font-family: -apple-system,BlinkMacSystemFont;
     text-align: center;
-    /* width: 70%;
-    right: 15%; */
-    /* border-right: #686565 1px solid; */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
