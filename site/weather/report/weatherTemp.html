@@ -4,10 +4,11 @@
 <head>
     <link rel="stylesheet" href="../style/weather.css">
     <style>
-        .column-right {
-                background-image: url('../sources/lj/la_jolla_side.png');
-                background-position: center; 
-            }
+        .left-top {
+            background-image: url('../sources/lj/la_jolla.jpeg');
+            background-position: center;
+            border-radius: 40px 0px 0px 0px;
+        }
     </style>
 </head>
 
@@ -18,9 +19,86 @@
         </form>
         <div class="body-inner">
             <div class="column-left">
+                <div class="left-top">
+                    <!-- <h1 class="left-title">Weather Forecast</h1> -->
+                </div>
+                <div class="day-block d1">
+                    Monday
+                    <img class="icon" src="../sources/weather_icons/cloudy.png" />
+                    <h2 class="temp-day">60F &deg</h2>
+                </div>
+                <div class="day-block d2">
+                    Tuesday
+                    <img class="icon" src="../sources/weather_icons/partly_cloudy.png" />
+                    <h2 class="temp-day">60F &deg</h2>
+                </div>
+                <div class="day-block d3">
+                    Wednesday
+                    <img class="icon" src="../sources/weather_icons/cloudy.png" />
+                    <h2 class="temp-day">60F &deg</h2>
+                </div>
+                <div class="day-block d4">
+                    Thursday
+                    <img class="icon" src="../sources/weather_icons/cloudy.png" />
+                    <h2 class="temp-day">60F &deg</h2>
+                </div>
+                <div class="day-block d5">
+                    Friday
+                    <img class="icon" src="../sources/weather_icons/sunny.png" />
+                    <h2 class="temp-day">60F &deg</h2>
+                </div>
+                <div class="day-block d6">
+                    Saturday
+                    <img class="icon" src="../sources/weather_icons/thunder.png" />
+                    <h2 class="temp-day">60F &deg</h2>
+                </div>
+                <div class="day-block d7">
+                    Sunday
+                    <img class="icon" src="../sources/weather_icons/cloudy.png" />
+                    <h2 class="temp-day">60F &deg</h2>
+                </div>
             </div>
             <div class="column-right">
+                <div class="right-temp">
+                    <div class="title">
+                        <!-- Today -->
+                        <div id="location"></div>
+                    </div>
+                    <h1 id="tempF"></h1>
+                    <div id="des"></div>
+                </div>
+                <!-- <div class="date"> -->
+                    <h1 class="date">Sunday, May 29th</h1>
+                <!-- </div> -->
             </div>
+        </div>
+
+        <div>
+            <script lang="text/javascript">
+                function weatherBalloon(cityID) {
+                    var key = 'bb4ee933060dc46241b9d5341d6f9368';
+                    fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&appid=' + key)
+                        .then(function (resp) { return resp.json() })
+                        .then(function (data) {
+                            drawWeather(data);
+                        })
+                        .catch(function () {
+                        });
+                }
+                function drawWeather(d) {
+                    var celcius = Math.round(parseFloat(d.main.temp) - 273.15) + 2;
+                    var fahrenheit = Math.round(((parseFloat(d.main.temp) - 273.15) * 1.8) + 34);
+
+                    document.getElementById("des").innerHTML = d.weather[0].description;
+                    document.getElementById("tempF").innerHTML = fahrenheit + 'F &deg;';
+                    // document.getElementById("tempC").innerHTML = celcius + 'C &deg;';
+                    document.getElementById("location").innerHTML = d.name;
+                }
+
+                window.onload = function () {
+                    weatherBalloon(5363943);
+                }
+            </script>
         </div>
     </div>
 </body>

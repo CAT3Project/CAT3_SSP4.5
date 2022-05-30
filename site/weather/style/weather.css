@@ -24,21 +24,107 @@ body {
     position: absolute;
     width: 63%;
     height: 100%;
+    font-family: -apple-system, BlinkMacSystemFont;
 }
 
+.left-top {
+    position: absolute;
+    height: 70%;
+    width: 100%;
+}
+
+/* .left-title{
+    position: absolute;
+    left: 5%;
+    top: 3%;
+} */
 .column-right {
     /* background: #7d6959; */
     width: 37%;
     height: 100%;
     left: 63%;
+    background: rgb(255, 232, 195);
     position: absolute;
     border-radius: 0px 40px 40px 0px;
 }
 
-/* .cover{
+.right-temp {
+    position: relative;
+    top: 30%;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont;
+}
+
+.day-block {
     position: absolute;
-    width: 30%;
-    left: 5%;
-    top: 5%;
-    border-radius: 20px;
-} */
+    height: 37%;
+    top: 72%;
+    display: inline;
+    width: 14%;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont;
+}
+
+.d1 {
+    position: absolute;
+    left: 0%;
+}
+
+.d2 {
+    position: absolute;
+    left: 14%;
+}
+
+.d3 {
+    position: absolute;
+    left: 28%;
+}
+
+.d4 {
+    position: absolute;
+    left: 42%;
+}
+
+.d5 {
+    position: absolute;
+    left: 56%;
+}
+
+.d6 {
+    position: absolute;
+    left: 70%;
+}
+
+.d7 {
+    position: absolute;
+    left: 84%;
+}
+
+.icon {
+    position: absolute;
+    width: 70%;
+    height: 40%;
+    left: 15%;
+    right: 15%;
+    top: 10%;
+}
+
+.temp-day {
+    position: absolute;
+    top: 45%;
+    width: 70%;
+    left: 15%;
+    right: 15%;
+    font-family: -apple-system, BlinkMacSystemFont;
+}
+
+.date{
+    position: absolute;
+    height: 33%;
+    top: 67%;
+    text-align: center;
+    width: 70%;
+    left: 15%;
+    right: 15%;
+    font-family: -apple-system, BlinkMacSystemFont;
+}
