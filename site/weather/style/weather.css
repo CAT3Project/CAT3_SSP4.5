@@ -33,11 +33,6 @@ body {
     width: 100%;
 }
 
-/* .left-title{
-    position: absolute;
-    left: 5%;
-    top: 3%;
-} */
 .column-right {
     /* background: #7d6959; */
     width: 37%;
@@ -50,7 +45,16 @@ body {
 
 .right-temp {
     position: relative;
+    height: 67%;
     top: 30%;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont;
+}
+
+.date-div{
+    position: relative;
+    height: 33%;
+    top: 8%;
     text-align: center;
     font-family: -apple-system, BlinkMacSystemFont;
 }
@@ -112,17 +116,6 @@ body {
 .temp-day {
     position: absolute;
     top: 45%;
-    width: 70%;
-    left: 15%;
-    right: 15%;
-    font-family: -apple-system, BlinkMacSystemFont;
-}
-
-.date{
-    position: absolute;
-    height: 33%;
-    top: 67%;
-    text-align: center;
     width: 70%;
     left: 15%;
     right: 15%;
