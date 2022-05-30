@@ -1,5 +1,7 @@
 body {
     margin: 0;
+    text-align: center;
+    font-family: -apple-system, BlinkMacSystemFont;
 }
 
 .body-outer {
@@ -24,13 +26,13 @@ body {
     position: absolute;
     width: 63%;
     height: 100%;
-    font-family: -apple-system, BlinkMacSystemFont;
 }
 
 .left-top {
     position: absolute;
     height: 70%;
     width: 100%;
+    border-bottom: #ac9e93 2px solid;
 }
 
 .column-right {
@@ -43,30 +45,75 @@ body {
     border-radius: 0px 40px 40px 0px;
 }
 
-.right-temp {
-    position: relative;
-    height: 67%;
-    top: 30%;
-    text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont;
+.home-button-div {
+    position: absolute;
+    height: 30%;
+    width: 100%;
 }
 
-.date-div{
-    position: relative;
-    height: 33%;
-    top: 8%;
-    text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont;
+.home-button {
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    top: 15%;
+    left: 20%;
+}
+
+.main-button {
+    position: absolute;
+    height: 100%;
+    width: 10%;
+    top: 15%;
+    left: 7%;
+}
+
+.right-middle {
+    position: absolute;
+    height: 40%;
+    top: 20%;
+    width: 100%;
+}
+
+.middle-left {
+    position: absolute;
+    width: 30%;
+    height: 100%;
+    text-align: left;
+    left: 10%;
+}
+
+.middle-right {
+    position: absolute;
+    height: 100%;
+    left: 30%;
+    width: 70%;
+}
+
+.main-icon {
+    width: 50%;
+}
+
+.date-div {
+    position: absolute;
+    border-top: #ac9e93 2px solid;
+    height: 30%;
+    top: 70%;
+    width: 100%;
+}
+
+.date-display {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 20%;
 }
 
 .day-block {
     position: absolute;
-    height: 37%;
-    top: 72%;
+    height: 33%;
+    top: 73%;
     display: inline;
     width: 14%;
-    text-align: center;
-    font-family: -apple-system, BlinkMacSystemFont;
 }
 
 .d1 {
@@ -119,5 +166,4 @@ body {
     width: 70%;
     left: 15%;
     right: 15%;
-    font-family: -apple-system, BlinkMacSystemFont;
 }

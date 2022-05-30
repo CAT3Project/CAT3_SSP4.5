@@ -9,6 +9,7 @@
             background-position: center;
             border-radius: 40px 0px 0px 0px;
         }
+
         .column-right {
             background-color: rgb(221, 190, 137);
         }
@@ -17,9 +18,6 @@
 
 <body>
     <div class="body-outer">
-        <form action="https://cat3project.github.io/CAT3_SSP4.5/site/home/index.html" class="home-button-div">
-            <input type="submit" value="Home" class="home-button" />
-        </form>
         <div class="body-inner">
             <div class="column-left">
                 <div class="left-top">
@@ -33,45 +31,59 @@
                 <div class="day-block d2">
                     Tuesday
                     <img class="icon" src="../sources/weather_icons/partly_cloudy.png" />
-                    <h2 class="temp-day">60F &deg</h2>
+                    <h2 class="temp-day" id="d2-tempF"></h2>
                 </div>
                 <div class="day-block d3">
                     Wednesday
                     <img class="icon" src="../sources/weather_icons/cloudy.png" />
-                    <h2 class="temp-day">60F &deg</h2>
+                    <h2 class="temp-day" id="d3-tempF"></h2>
                 </div>
                 <div class="day-block d4">
                     Thursday
                     <img class="icon" src="../sources/weather_icons/cloudy.png" />
-                    <h2 class="temp-day">60F &deg</h2>
+                    <h2 class="temp-day" id="d4-tempF"></h2>
                 </div>
                 <div class="day-block d5">
                     Friday
                     <img class="icon" src="../sources/weather_icons/sunny.png" />
-                    <h2 class="temp-day">60F &deg</h2>
+                    <h2 class="temp-day" id="d5-tempF"></h2>
                 </div>
                 <div class="day-block d6">
                     Saturday
                     <img class="icon" src="../sources/weather_icons/thunder.png" />
-                    <h2 class="temp-day">60F &deg</h2>
+                    <h2 class="temp-day" id="d6-tempF"></h2>
                 </div>
                 <div class="day-block d7">
                     Sunday
                     <img class="icon" src="../sources/weather_icons/cloudy.png" />
-                    <h2 class="temp-day">60F &deg</h2>
+                    <h2 class="temp-day" id="d7-tempF"></h2>
                 </div>
             </div>
             <div class="column-right">
-                <div class="right-temp">
-                    <div class="title">
-                        <!-- Today -->
-                        <div id="location"></div>
+                <form action="../index.html" class="home-button-div">
+                    <input type="image" src="../sources/arrow.png" value="Main" class="main-button"
+                        style="height: 40px" />
+                </form>
+
+                <form action="../../home/index.html" class="home-button-div">
+                    <input type="image" src="../sources/home_icon.png" value="Home" class="home-button"
+                        style="height: 40px" />
+                </form>
+                <div class="right-middle">
+                    <div class="middle-left">
+                        <div class="title">
+                            <h2 id="location"></h2>
+                        </div>
+                        <h2 id="des"></h2>
+                        <h1 id="tempF"></h1>
                     </div>
-                    <h1 id="tempF"></h1>
-                    <div id="des"></div>
+
+                    <div class="middle-right">
+                        <img id="main-icon" class="main-icon">
+                    </div>
                 </div>
                 <div class="date-div">
-                    <h1 id="date" class="date"></h1>
+                    <h1 id="date" class="date-display"></h1>
                 </div>
             </div>
         </div>
@@ -88,13 +100,16 @@
                         .catch(function () {
                         });
                     //api.openweathermap.org/data/2.5/forecast/climate?q=London&cnt=3
-                    fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&cnt=7&appid=' + key)
-                        .then(function (resp) { return resp.json() })
-                        .then(function (data) {
-                            drawTemperature(data, "d1");
-                        })
-                        .catch(function () {
-                        });
+
+                    for (let i = 1; i < 8; i++) {
+                        fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&cnt=' + i + '&appid=' + key)
+                            .then(function (resp) { return resp.json() })
+                            .then(function (data) {
+                                drawTemperature(data, "d" + i);
+                            })
+                            .catch(function () {
+                            });
+                    }
                 }
                 function drawWeather(data) {
                     var celcius = Math.round(parseFloat(data.main.temp) - 273.15) + 2;
@@ -103,6 +118,7 @@
                     document.getElementById("des").innerHTML = data.weather[0].description;
                     document.getElementById("tempF").innerHTML = fahrenheit + 'F &deg;';
                     document.getElementById("location").innerHTML = data.name;
+                    getIcon(data.weather[0].description);
                 }
 
                 function drawTemperature(data, day) {
@@ -128,6 +144,17 @@
                         var dateFull = monthString[mm] + ' ' + dd + 'th, ' + yyyy;
                     }
                     document.getElementById("date").innerHTML = dateFull;
+                }
+
+                function getIcon(description) {
+                    let weatherString = ['cloud', 'part', 'rain', 'sun', 'storm', 'wind'];
+                    let weatherIcon = ['cloudy.png', 'partly_cloudy.png', 'rainy.png', 'sunny.png', 'thunder.png', 'windy.png', 'sunny.png'];
+                    document.getElementById("main-icon").src = "../sources/weather_icons/" + weatherIcon[weatherIcon.length - 1];
+                    for (let i = 0; i < 7; i++) {
+                        if (description.includes(weatherString[i])) {
+                            document.getElementById("main-icon").src = "../sources/weather_icons/" + weatherIcon[i];
+                        }
+                    }
                 }
 
                 window.onload = function () {
