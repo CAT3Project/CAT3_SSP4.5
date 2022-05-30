@@ -1,3 +1,7 @@
+body {
+    font-family: -apple-system,BlinkMacSystemFont;
+}
+
 .menu {
     background-color: #b9a798;
     position: fixed;
@@ -125,6 +129,13 @@ a {
     border-bottom: 2px solid #4f4f4f;
 }
 
+.opinion-header {
+    padding-left: 20px;
+    padding-top: 10px;
+    margin-bottom: -10px;
+    font-weight: bold;
+}
+
 .article-header {
     font-size: 25px;
     font-weight: bold;
@@ -148,4 +159,14 @@ img.left {
 .article-img {
     height: auto;
     width: 330px;
+}
+
+.ad-container {
+    text-align: center;
+}
+
+.ad-image{
+    padding: 20px;
+    height: auto;
+    width: 80%
 }

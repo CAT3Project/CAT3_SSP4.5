@@ -1,5 +1,6 @@
 body {
     text-align: center;
+    font-family: -apple-system,BlinkMacSystemFont;
 }
 
 img {
@@ -29,6 +30,7 @@ img {
     margin-right: 25%;
     margin-left: 25%;
     text-align: left;
+    font-weight: bold;
 }
 
 .article-author {
