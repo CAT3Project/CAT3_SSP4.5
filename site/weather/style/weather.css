@@ -111,7 +111,7 @@ body {
 .day-block {
     position: absolute;
     height: 33%;
-    top: 73%;
+    top: 70%;
     display: inline;
     width: 14%;
 }
@@ -157,12 +157,13 @@ body {
     height: 40%;
     left: 15%;
     right: 15%;
-    top: 10%;
+    top: 20%;
 }
 
 .temp-day {
     position: absolute;
-    top: 45%;
+    top: 55%;
+    height: 30%;
     width: 70%;
     left: 15%;
     right: 15%;

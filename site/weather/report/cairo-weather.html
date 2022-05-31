@@ -24,45 +24,45 @@
                     <!-- <h1 class="left-title">Weather Forecast</h1> -->
                 </div>
                 <div class="day-block d1">
-                    Monday
-                    <img class="icon" src="../sources/weather_icons/cloudy.png" />
-                    <h2 class="temp-day" id="d1-tempF"></h2>
+                    <h4 class="weekday" id="d1-day"></h4>
+                    <img class="icon" src="../sources/weather_icons/partly_cloudy.png" />
+                    <h2 class="temp-day" id="d1-tempF">97F &deg</h2>
                 </div>
                 <div class="day-block d2">
-                    Tuesday
-                    <img class="icon" src="../sources/weather_icons/partly_cloudy.png" />
-                    <h2 class="temp-day" id="d2-tempF"></h2>
+                    <h4 class="weekday" id="d2-day"></h4>
+                    <img class="icon" src="../sources/weather_icons/sunny.png" />
+                    <h2 class="temp-day" id="d2-tempF">97F &deg</h2>
                 </div>
                 <div class="day-block d3">
-                    Wednesday
-                    <img class="icon" src="../sources/weather_icons/cloudy.png" />
-                    <h2 class="temp-day" id="d3-tempF"></h2>
+                    <h4 class="weekday" id="d3-day"></h4>
+                    <img class="icon" src="../sources/weather_icons/sunny.png" />
+                    <h2 class="temp-day" id="d3-tempF">99F &deg</h2>
                 </div>
                 <div class="day-block d4">
-                    Thursday
-                    <img class="icon" src="../sources/weather_icons/cloudy.png" />
-                    <h2 class="temp-day" id="d4-tempF"></h2>
+                    <h4 class="weekday" id="d4-day"></h4>
+                    <img class="icon" src="../sources/weather_icons/sunny.png" />
+                    <h2 class="temp-day" id="d4-tempF">101F &deg</h2>
                 </div>
                 <div class="day-block d5">
-                    Friday
+                    <h4 class="weekday" id="d5-day"></h4>
                     <img class="icon" src="../sources/weather_icons/sunny.png" />
-                    <h2 class="temp-day" id="d5-tempF"></h2>
+                    <h2 class="temp-day" id="d5-tempF">102F &deg</h2>
                 </div>
                 <div class="day-block d6">
-                    Saturday
-                    <img class="icon" src="../sources/weather_icons/thunder.png" />
-                    <h2 class="temp-day" id="d6-tempF"></h2>
+                    <h4 class="weekday" id="d6-day"></h4>
+                    <img class="icon" src="../sources/weather_icons/sunny.png" />
+                    <h2 class="temp-day" id="d6-tempF">100F &deg</h2>
                 </div>
                 <div class="day-block d7">
-                    Sunday
-                    <img class="icon" src="../sources/weather_icons/cloudy.png" />
-                    <h2 class="temp-day" id="d7-tempF"></h2>
+                    <h4 class="weekday" id="d7-day"></h4>
+                    <img class="icon" src="../sources/weather_icons/sunny.png" />
+                    <h2 class="temp-day" id="d7-tempF">99F &deg</h2>
                 </div>
             </div>
             <div class="column-right">
                 <div class="nav-bar">
-                    <a href="../index.html"><img src="../sources/arrow.png" class="main-button"></a> 
-                    <a href="../../home/index.html"><img src="../sources/home_icon.png" class="home-button"></a> 
+                    <a href="../index.html"><img src="../sources/arrow.png" class="main-button"></a>
+                    <a href="../../home/index.html"><img src="../sources/home_icon.png" class="home-button"></a>
                 </div>
                 <div class="right-middle">
                     <div class="middle-left">
@@ -96,15 +96,15 @@
                         });
                     //api.openweathermap.org/data/2.5/forecast/climate?q=London&cnt=3
 
-                    for (let i = 1; i < 8; i++) {
-                        fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&cnt=' + i + '&appid=' + key)
-                            .then(function (resp) { return resp.json() })
-                            .then(function (data) {
-                                drawTemperature(data, "d" + i);
-                            })
-                            .catch(function () {
-                            });
-                    }
+                    // for (let i = 1; i < 8; i++) {
+                    //     fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&cnt=' + i + '&appid=' + key)
+                    //         .then(function (resp) { return resp.json() })
+                    //         .then(function (data) {
+                    //             drawTemperature(data, "d" + i);
+                    //         })
+                    //         .catch(function () {
+                    //         });
+                    // }
                 }
                 function drawWeather(data) {
                     var celcius = Math.round(parseFloat(data.main.temp) - 273.15) + 2;
@@ -139,6 +139,7 @@
                         var dateFull = monthString[mm] + ' ' + dd + 'th, ' + yyyy;
                     }
                     document.getElementById("date").innerHTML = dateFull;
+                    getDays(today);
                 }
 
                 function getIcon(description) {
@@ -152,6 +153,16 @@
                     }
                 }
 
+                function getDays(date) {
+                    let dayString = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                    let day1 = date.getDay();
+                    for (let index = 1; index < 8; index++) {
+                        let j = (index + day1 - 1) % 7;
+                        document.getElementById("d" + index + "-day").innerHTML = dayString[j];
+                    }
+                    // document.getElementById("d1-day").innerHTML = day1;
+
+                }
                 window.onload = function () {
                     weatherBalloon(360630);
                     getDate();
