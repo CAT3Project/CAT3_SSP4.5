@@ -24,19 +24,32 @@
         <div class="bottom-panel">
             <div class="bottom-left">
                 <div id="date"></div>
-                <div id="time"></div>
+                <div id="time"></div><br>
+                Pacific Standard Time
                 <script>
-                    
+
                     const zeroFill = n => {
                         return ('0' + n).slice(-2);
                     }
 
                     const interval = setInterval(() => {
                         const now = new Date();
-                        const date = zeroFill((now.getMonth() + 1)) + '/' + zeroFill(now.getUTCDate()) + '/' + now.getFullYear();
                         const time = zeroFill(now.getHours()) + ':' + zeroFill(now.getMinutes()) + ':' + zeroFill(now.getSeconds());
 
-                        document.getElementById('date').innerHTML = date;
+                        let monthString = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                        var dd = now.getDate();
+                        var mm = now.getMonth();
+                        var yyyy = now.getFullYear();
+                        if (dd % 10 == 1) {
+                            var dateFull = monthString[mm] + ' ' + dd + 'st, ' + yyyy;
+                        } else if (dd % 10 == 2) {
+                            var dateFull = monthString[mm] + ' ' + dd + 'nd, ' + yyyy;
+                        } else if (dd % 10 == 3) {
+                            var dateFull = monthString[mm] + ' ' + dd + 'rd, ' + yyyy;
+                        } else {
+                            var dateFull = monthString[mm] + ' ' + dd + 'th, ' + yyyy;
+                        }
+                        document.getElementById('date').innerHTML = dateFull;
                         document.getElementById('time').innerHTML = time;
                     }, 1000);
                 </script>

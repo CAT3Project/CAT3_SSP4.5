@@ -45,7 +45,7 @@ body {
     border-radius: 0px 40px 40px 0px;
 }
 
-.home-button-div {
+.nav-bar{
     position: absolute;
     height: 30%;
     width: 100%;
@@ -53,16 +53,16 @@ body {
 
 .home-button {
     position: absolute;
-    height: 100%;
-    width: 10%;
+    height: 45%;
+    width: 15%;
     top: 15%;
-    left: 20%;
+    left: 25%;
 }
 
 .main-button {
     position: absolute;
-    height: 100%;
-    width: 10%;
+    height: 50%;
+    width: 15%;
     top: 15%;
     left: 7%;
 }
