@@ -47,3 +47,13 @@ img {
     text-align: justify;
     font-family: -apple-system,BlinkMacSystemFont;
 }
+
+.image-container {
+    display: inline-block;
+}
+
+.image-credit {
+    float: left;
+    font-weight: lighter;
+    font-size: 10px;
+}
