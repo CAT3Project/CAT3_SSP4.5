@@ -128,7 +128,7 @@
                     today = new Date();
                     let monthString = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
                     var dd = today.getDate();
-                    var mm = today.getMonth();
+                    var mm = today.getMonth() + 5;
                     var yyyy = today.getFullYear() + 30;
                     if (dd % 10 == 1) {
                         var dateFull = monthString[mm] + ' ' + dd + 'st, ' + yyyy;

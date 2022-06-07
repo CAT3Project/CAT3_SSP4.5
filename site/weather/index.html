@@ -38,7 +38,7 @@
 
                         let monthString = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
                         var dd = now.getDate();
-                        var mm = now.getMonth();
+                        var mm = now.getMonth() + 5;
                         var yyyy = now.getFullYear() + 30;
                         if (dd % 10 == 1) {
                             var dateFull = monthString[mm] + ' ' + dd + 'st, ' + yyyy;
