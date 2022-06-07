@@ -96,15 +96,15 @@
                         });
                     //api.openweathermap.org/data/2.5/forecast/climate?q=London&cnt=3
 
-                    // for (let i = 1; i < 8; i++) {
-                    //     fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&cnt=' + i + '&appid=' + key)
-                    //         .then(function (resp) { return resp.json() })
-                    //         .then(function (data) {
-                    //             drawTemperature(data, "d" + i);
-                    //         })
-                    //         .catch(function () {
-                    //         });
-                    // }
+                    for (let i = 1; i < 8; i++) {
+                        fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&cnt=' + i + '&appid=' + key)
+                            .then(function (resp) { return resp.json() })
+                            .then(function (data) {
+                                drawTemperature(data, "d" + i);
+                            })
+                            .catch(function () {
+                            });
+                    }
                 }
                 function drawWeather(data) {
                     var celcius = Math.round(parseFloat(data.main.temp) - 273.15) + 2;

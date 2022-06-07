@@ -26,37 +26,37 @@
                 <div class="day-block d1">
                     <h4 class="weekday" id="d1-day"></h4>
                     <img class="icon" src="../sources/weather_icons/sunny.png" />
-                    <h2 class="temp-day" id="d1-tempF">93F &deg</h2>
+                    <h2 class="temp-day" id="d1-tempF"></h2>
                 </div>
                 <div class="day-block d2">
                     <h4 class="weekday" id="d2-day"></h4>
                     <img class="icon" src="../sources/weather_icons/sunny.png" />
-                    <h2 class="temp-day" id="d2-tempF">98F &deg</h2>
+                    <h2 class="temp-day" id="d2-tempF"></h2>
                 </div>
                 <div class="day-block d3">
                     <h4 class="weekday" id="d3-day"></h4>
                     <img class="icon" src="../sources/weather_icons/cloudy.png" />
-                    <h2 class="temp-day" id="d3-tempF">100F &deg</h2>
+                    <h2 class="temp-day" id="d3-tempF"></h2>
                 </div>
                 <div class="day-block d4">
                     <h4 class="weekday" id="d4-day"></h4>
                     <img class="icon" src="../sources/weather_icons/partly_cloudy.png" />
-                    <h2 class="temp-day" id="d4-tempF">99F &deg</h2>
+                    <h2 class="temp-day" id="d4-tempF"></h2>
                 </div>
                 <div class="day-block d5">
                     <h4 class="weekday" id="d5-day"></h4>
                     <img class="icon" src="../sources/weather_icons/partly_cloudy.png" />
-                    <h2 class="temp-day" id="d5-tempF">92F &deg</h2>
+                    <h2 class="temp-day" id="d5-tempF"></h2>
                 </div>
                 <div class="day-block d6">
                     <h4 class="weekday" id="d6-day"></h4>
                     <img class="icon" src="../sources/weather_icons/rainy.png" />
-                    <h2 class="temp-day" id="d6-tempF">91F &deg</h2>
+                    <h2 class="temp-day" id="d6-tempF"></h2>
                 </div>
                 <div class="day-block d7">
                     <h4 class="weekday" id="d7-day"></h4>
                     <img class="icon" src="../sources/weather_icons/rainy.png" />
-                    <h2 class="temp-day" id="d7-tempF">81F &deg</h2>
+                    <h2 class="temp-day" id="d7-tempF"></h2>
                 </div>
             </div>
             <div class="column-right">
@@ -94,17 +94,17 @@
                         })
                         .catch(function () {
                         });
-                    //api.openweathermap.org/data/2.5/forecast/climate?q=London&cnt=3
+                    // api.openweathermap.org/data/2.5/forecast/climate?q=London&cnt=3
 
-                    // for (let i = 1; i < 8; i++) {
-                    //     fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&cnt=' + i + '&appid=' + key)
-                    //         .then(function (resp) { return resp.json() })
-                    //         .then(function (data) {
-                    //             drawTemperature(data, "d" + i);
-                    //         })
-                    //         .catch(function () {
-                    //         });
-                    // }
+                    for (let i = 1; i < 8; i++) {
+                        fetch('https://api.openweathermap.org/data/2.5/weather?id=' + cityID + '&cnt=' + i + '&appid=' + key)
+                            .then(function (resp) { return resp.json() })
+                            .then(function (data) {
+                                drawTemperature(data, "d" + i);
+                            })
+                            .catch(function () {
+                            });
+                    }
                 }
                 function drawWeather(data) {
                     var celcius = Math.round(parseFloat(data.main.temp) - 273.15) + 2;
@@ -117,7 +117,7 @@
                 }
 
                 function drawTemperature(data, day) {
-                    // var celcius = Math.round(parseFloat(data.main.temp) - 273.15) + 2;
+                    var celcius = Math.round(parseFloat(data.main.temp) - 273.15) + 2;
                     var fahrenheit = Math.round(((parseFloat(data.main.temp) - 273.15) * 1.8) + 34);
                     // document.getElementById(day + "tempF").innerHTML = fahrenheit + 'F &deg;';
                     document.getElementById(day + "-tempF").innerHTML = fahrenheit + 'F &deg;';
