@@ -118,7 +118,7 @@
 
                 function drawTemperature(data, day) {
                     // var celcius = Math.round(parseFloat(data.main.temp) - 273.15) + 2;
-                    var fahrenheit = Math.round(((parseFloat(data.main.temp) - 273.15) * 1.8) + 34);
+                    var fahrenheit = Math.round(((parseFloat(data.main.temp) - 273.15) * 1.8) + 32 + Math.floor(Math.random() * 2));
                     // document.getElementById(day + "tempF").innerHTML = fahrenheit + 'F &deg;';
                     document.getElementById(day + "-tempF").innerHTML = fahrenheit + 'F &deg;';
                 }
